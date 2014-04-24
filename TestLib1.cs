@@ -7,7 +7,7 @@ namespace TestLib1
     {
         public static void Foo()
         {
-            Console.WriteLine (MyClass.ToLower ("David"));
+            Console.WriteLine (MyClass.ToLower ("TestLib1.MyClass2.Foo()"));
         }
     }
 }
