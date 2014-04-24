@@ -13,7 +13,7 @@ namespace MyTest
                 var an = new AssemblyName(args.Name);
                 Console.WriteLine ("AssemblyResolve=" + an.Name);
 
-                var target = Path.Combine("both", an.Name + ".dll");
+                var target = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "both", an.Name + ".dll");
 
                 Console.WriteLine ("Trying to load assembly from PATH=" + target);
 
