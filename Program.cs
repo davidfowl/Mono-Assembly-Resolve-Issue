@@ -11,13 +11,13 @@ namespace MyTest
             AppDomain.CurrentDomain.AssemblyResolve += (object sender, ResolveEventArgs args) => 
             {
                 var an = new AssemblyName(args.Name);
-                Console.WriteLine ("AssemblyResolve=" + an.Name);
+                Console.WriteLine ("AssemblyResolve=" + an.Name + " from assembly " + args.RequestingAssembly);
 
                 var target = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "both", an.Name + ".dll");
 
                 Console.WriteLine ("Trying to load assembly from PATH=" + target);
 
-                if(File.Exists(target)) 
+                if (File.Exists(target)) 
                 {
                     return Assembly.LoadFile(target);
                 }
